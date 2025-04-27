@@ -32,7 +32,7 @@ jobs:
     needs: [push_to_registry]
     runs-on: ubuntu-24.04
     steps:
-      - uses: action/checkout@v4
+      - uses: actions/checkout@v4
       - name: Insert release date
         run: 'sed -i "s/release-date: .*$/release-date: s`date +%s`/g" ./server-k8s-manifests/devops-psu.yml'
       - name: Commit manifest
